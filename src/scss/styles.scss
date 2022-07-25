@@ -11,6 +11,8 @@
     margin: 0;
     padding: 0;
     font-family: Gilroy;
+    -webkit-scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
 }
 html {
     overflow-x: hidden;

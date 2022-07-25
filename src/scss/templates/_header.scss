@@ -383,10 +383,19 @@ header {
             display: none;
         }
     }
+    @keyframes hmOpen {
+        0% {
+            opacity: 0;
+        }
+        30% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
     .h_m-open {
         height: 100%;
-        // background-color: rgba(255, 255, 255, 0.6);
-        // backdrop-filter: blur(4px);
         background-color: $color-white-main;
         .header__nav-mobile__button-wrapper {
             display: flex; 
@@ -406,6 +415,7 @@ header {
         .header__nav-mobile-content {
             display: flex;
             opacity: 1;
+            animation: hmOpen 0.6s ease-in-out;
         }
     }
 }

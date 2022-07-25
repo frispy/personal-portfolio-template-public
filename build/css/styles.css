@@ -61,6 +61,8 @@
   margin: 0;
   padding: 0;
   font-family: Gilroy;
+  -webkit-scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
 }
 
 html {
@@ -1319,7 +1321,7 @@ header .header__content .header__scrolldown-hide {
   display: flex;
   align-self: flex-end;
   justify-content: flex-start;
-  transition: 0.3s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 .gallery__wrapper .gallery__nav-wrapper .gallery__nav .gallery__nav-item:hover a {
@@ -1328,7 +1330,6 @@ header .header__content .header__scrolldown-hide {
 
 .gallery__wrapper .gallery__content {
   width: 80%;
-  height: auto;
   display: flex;
   flex-wrap: wrap;
   transition: 0.3s ease-in-out;
@@ -1618,12 +1619,11 @@ header .header__content .header__scrolldown-hide {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 .gallery__item-more .gallery__item-more-content .gallery__item-more-image {
   width: 100%;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1641,7 +1641,6 @@ header .header__content .header__scrolldown-hide {
 .gallery__item-more .gallery__item-more-content .gallery__item-more-desc {
   margin-top: 3em;
   width: 80%;
-  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1661,7 +1660,6 @@ header .header__content .header__scrolldown-hide {
 
 .gallery__item-more .gallery__item-more-content .gallery__item-more-desc .gallery__item-more-info div {
   width: 100%;
-  height: auto;
   display: flex;
   flex-direction: column;
 }
@@ -1796,6 +1794,7 @@ header .header__content .header__scrolldown-hide {
 }
 
 .reviews__wrapper .reviews__slider .slick-arrow {
+  display: flex;
   position: absolute;
   z-index: 10;
   top: 30%;
@@ -2165,7 +2164,6 @@ footer h6 {
 
   .gallery__item-more .gallery__item-more-content .gallery__item-more-image {
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2179,7 +2177,6 @@ footer h6 {
   .gallery__item-more .gallery__item-more-content .gallery__item-more-desc {
     margin-top: 3em;
     width: 95%;
-    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -2195,7 +2192,6 @@ footer h6 {
 
   .gallery__item-more .gallery__item-more-content .gallery__item-more-desc .gallery__item-more-info div {
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
   }
@@ -2635,9 +2631,14 @@ footer h6 {
     font-size: 32px;
   }
 
+  .gallery__wrapper .gallery__content {
+    gap: 0px 0px;
+  }
+
   .gallery__wrapper .gallery__content .gallery__content-item {
     width: 100% !important;
     height: 650px !important;
+    margin-top: 1.5em;
   }
 
   .gallery__item-more .gallery__content-more-close {
@@ -2647,7 +2648,6 @@ footer h6 {
 
   .gallery__item-more .gallery__item-more-content .gallery__item-more-image {
     width: 100%;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2661,7 +2661,6 @@ footer h6 {
   .gallery__item-more .gallery__item-more-content .gallery__item-more-desc {
     margin-top: 3em;
     width: 95%;
-    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2677,7 +2676,6 @@ footer h6 {
 
   .gallery__item-more .gallery__item-more-content .gallery__item-more-desc .gallery__item-more-info div {
     width: 100%;
-    height: auto;
     display: flex;
     flex-direction: column;
   }
@@ -2717,6 +2715,8 @@ footer h6 {
 
   .reviews__wrapper .reviews__slider .slick-arrow {
     display: none;
+    opacity: 0;
+    z-index: -999999;
   }
 
   .contacts__wrapper .contacts__content {
@@ -2861,6 +2861,34 @@ footer h6 {
     display: none;
   }
 
+@-webkit-keyframes hmOpen {
+    0% {
+      opacity: 0;
+    }
+
+    30% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+
+@keyframes hmOpen {
+    0% {
+      opacity: 0;
+    }
+
+    30% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+}
+
   .h_m-open {
     height: 100%;
     background-color: #FFF;
@@ -2886,6 +2914,8 @@ footer h6 {
   .h_m-open .header__nav-mobile-content {
     display: flex;
     opacity: 1;
+    -webkit-animation: hmOpen 0.6s ease-in-out;
+            animation: hmOpen 0.6s ease-in-out;
   }
 }
 
@@ -2946,7 +2976,6 @@ footer h6 {
   .gallery__item-more .gallery__item-more-content .gallery__item-more-desc {
     margin-top: 3em;
     width: 95%;
-    height: auto;
   }
 }
 

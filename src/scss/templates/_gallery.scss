@@ -24,26 +24,17 @@
                 background: $color-bold-main;
                 width: 25%; height: 4px;
                 display: flex; align-self: flex-end; justify-content: flex-start;
-                transition: .3s ease-in-out;
+                transition: .6s ease-in-out;
             }
             .gallery__nav-item:hover {
                 a {
                     color: $color-bold-main;
                 }
             }
-            // .gallery__nav-item:nth-child(2):hover ~ .gallery__nav-underline {
-            //     margin-left: 25%;
-            // }
-            // .gallery__nav-item:nth-child(3):hover ~ .gallery__nav-underline {
-            //     margin-left: 50%;
-            // }
-            // .gallery__nav-item:nth-child(4):hover ~ .gallery__nav-underline {
-            //     margin-left: 75%;
-            // }
         }
     }
     .gallery__content {
-        width: 80%; height: auto;
+        width: 80%; 
         display: flex; flex-wrap: wrap; 
         transition: .3s ease-in-out;
         gap: 20px 20px;
@@ -218,9 +209,9 @@
         padding: 3.5em 3em 3.5em 3em;
         background-color: $color-white-main;
         display: flex; flex-direction: column; align-items: center;
-        overflow-y: scroll; 
+        overflow: scroll; 
         .gallery__item-more-image {
-            width: 100%; height: auto;
+            width: 100%;
             display: flex; justify-content: center; align-items: center;
             div {
                 width: 70%; height: 450px;
@@ -230,7 +221,7 @@
         }
         .gallery__item-more-desc {
             margin-top: 3em;
-            width: 80%; height: auto; 
+            width: 80%;  
             display: flex; flex-direction: row;
             justify-content: space-between;
             span {
@@ -242,7 +233,7 @@
                 width: 30%;
                 display: flex; flex-direction: column;
                 div {
-                    width: 100%; height: auto;
+                    width: 100%;
                     display: flex; flex-direction: column;
                     h4 {
                         margin: 0.25em 0em 0.65em 0em;
@@ -304,7 +295,7 @@
         .gallery__item-more-content {
             padding: 2em 1em 2em 1em;
             .gallery__item-more-image {
-                width: 100%; height: auto;
+                width: 100%; 
                 display: flex; justify-content: center; align-items: center;
                 div {
                     width: 90%; height: 450px;
@@ -312,7 +303,7 @@
             }
             .gallery__item-more-desc {
                 margin-top: 3em;
-                width: 95%; height: auto; 
+                width: 95%; 
                 display: flex; flex-direction: row;
                 justify-content: space-between;
                 span {
@@ -321,7 +312,7 @@
                 .gallery__item-more-info {
                     width: 38%;
                     div {
-                        width: 100%; height: auto;
+                        width: 100%; 
                         display: flex; flex-direction: column;
                         h4 {
                             font-size: 32px;
@@ -381,8 +372,10 @@
             }
         }
         .gallery__content {
+            gap: 0px 0px;
             .gallery__content-item {
                 width: 100% !important; height: 650px !important;
+                margin-top: 1.5em;
             }
         }
     }
@@ -393,7 +386,7 @@
         }
         .gallery__item-more-content {
             .gallery__item-more-image {
-                width: 100%; height: auto;
+                width: 100%; 
                 display: flex; justify-content: center; align-items: center;
                 div {
                     width: 90%; height: 450px;
@@ -401,7 +394,7 @@
             }
             .gallery__item-more-desc {
                 margin-top: 3em;
-                width: 95%; height: auto; 
+                width: 95%; 
                 display: flex; flex-direction: column;
                 justify-content: space-between;
                 span {
@@ -410,7 +403,7 @@
                 .gallery__item-more-info {
                     width: 100%;
                     div {
-                        width: 100%; height: auto;
+                        width: 100%;
                         display: flex; flex-direction: column;
                         h4 {
                             font-size: 32px;
@@ -469,7 +462,7 @@
             }
             .gallery__item-more-desc {
                 margin-top: 3em;
-                width: 95%; height: auto; 
+                width: 95%; 
             }
         }
     }

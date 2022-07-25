@@ -64,6 +64,7 @@
             }
         }
         .slick-arrow {
+            display: flex;
             position: absolute;
             z-index: 10;
             top: 30%;
@@ -131,6 +132,8 @@
             }
             .slick-arrow {
                 display: none;
+                opacity: 0;
+                z-index: -999999;
             }
         }
     }
