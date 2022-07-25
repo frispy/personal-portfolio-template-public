@@ -1,0 +1,105 @@
+@import "abstracts/_variables.scss";
+
+.counter__wrapper {
+    background: $background-grey;
+    .counter__content {
+        width: 60%; height: 250px;
+        display: flex; justify-content: space-evenly; align-items: center;
+        .counter__item {
+            width: 25%; height: 150px;
+            display: flex; align-items: center; justify-content: center;
+            div {
+                width: 100%;
+                height: 150px;
+                display: flex; flex-direction: column; justify-content: center; align-items: center;
+                .counter__item-top {
+                    width: 100%; height: 65px;
+                    display: flex; flex-direction: row; justify-content: center;
+                    h2 {
+                        margin-bottom: 0.2em;
+                        font-size: 64px;
+                    }
+                }
+                .counter__item-bottom {
+                    width: 100%; height: 85px;
+                    display: flex; 
+                    p {
+                        font-size: 28px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1400px) {
+    .counter__wrapper {
+        .counter__content {
+            width: 80%;
+            .counter__item {
+                div {
+                    .counter__item-top {
+                        h2 {
+                            font-size: 48px;
+                        }
+                    }
+                    .counter__item-bottom {
+                        height: 50px;
+                        p {
+                            font-size: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .counter__wrapper {
+        .counter__content {
+            width: 100%;
+            div {
+                .counter__item-top {
+                    h2 {
+                        font-size: 42px;
+                    }
+                }
+                .counter__item-bottom {
+                    height: 40px;
+                    p {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .counter__wrapper {
+        height: 400px;
+        .counter__content {
+            width: 100%; height: 400px;
+            display: grid; grid-template-columns: 1fr 1fr; grid-template-columns: 1fr 1fr;
+            .counter__item {
+                width: 100%;
+                div {
+                    .counter__item-top {
+                        h2 {
+                            font-size: 48px;
+                        }
+                    }
+                    .counter__item-bottom {
+                        height: 60px;
+                        p {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

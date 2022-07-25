@@ -1,0 +1,143 @@
+// General Settings
+
+@import
+    "abstracts/_variables.scss",
+    "_fonts.scss";
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Gilroy;
+}
+html {
+    overflow-x: hidden;
+    background-size: cover;
+    // Text-Styles
+
+    h1 { // Section Titles
+        font-size: 48px;
+        color: $color-bold-main;
+        font-weight: bold;
+    }
+    
+    h2 { // Smaller Titles
+        color: $color-bold-main;
+        font-size: 36px;
+    }
+    
+    h3 {
+        color: $color-bold-main;
+        font-size: 30px;
+    }
+    
+    p {
+        color: $color-light-main;
+        font-weight: lighter;
+    }
+}
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+// Button Common Style
+
+.style__button {
+    width: 230px; height: 60px;
+    border-radius: 30px;
+    font-size: 24px;
+    display: flex; justify-content: center; align-items: center;
+    border: 1px solid $color-bold-main;
+    transition: .3s ease-in-out;
+    color: $color-bold-main;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .style__button {
+        width: 200px; height: 50px;
+        font-size: 20px;
+        border-radius: 50px;
+    } 
+}
+
+// Title Style
+
+.style__title {
+    width: 80%; height: 150px; 
+    display: flex; justify-content: flex-start; align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .style__title {
+        width: 90%;
+    }
+}
+
+@media (min-width: 2500px) {
+    .style__title {
+        max-width: 2250px;
+        margin: 0 auto;      
+    }
+}
+
+// Section Style 
+
+.style__section {
+    width: 100%; height: auto;
+    padding-bottom: 1.5em; padding-top: 1.5em;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+}
+
+@media (min-width: 2500px) {
+    .style__section {
+        div {
+            max-width: 2250px;
+        }
+    }
+}
+
+// Mixin
+
+@mixin textLine {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 2;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: $color-bold-main;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+// Main
+
+@import
+    "fonts.scss";
+
+// Vendors
+@import
+    "vendors/_normalize.scss";
+    
+// Templates
+@import
+    "templates/_header.scss",
+    "templates/_about.scss",
+    "templates/_service.scss",
+    "templates/_experience.scss",
+    "templates/_counter.scss",
+    "templates/_gallery.scss",
+    "templates/_reviews.scss",
+    "templates/_contact.scss",
+    "templates/_footer.scss";
+
+
+        
+
+
+

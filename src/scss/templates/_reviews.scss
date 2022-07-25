@@ -1,0 +1,171 @@
+@import "abstracts/_variables.scss";
+
+.reviews__wrapper {
+    width: 100%; height: auto;
+    display: flex; justify-content: center; align-items: center; flex-direction: column;
+    padding-bottom: 1.5em; padding-top: 1.5em;
+    .reviews__slider {
+        width: 80%; height: 400px;
+        position: relative;
+        .reviews__item {
+            width: 100%; height: 350px;
+            display: flex; flex-direction: column; align-items: center;
+            h1 {
+                height: 80px;
+                font-size: 96px;
+                color: $color-bold-main;
+            }
+            .reviews__item-quote {
+                width: 60%; height: 170px;
+                font-size: 24px;
+                line-height: 29px;
+                text-align: center;
+                color: $color-regular-main;
+            }
+            .reviews__item-author {
+                width: 30%; height: 100px; 
+                display: flex; flex-direction: row; align-items: center; justify-content: center;
+                .reviews__author-image {
+                    width: 62px; height: 62px;
+                    border-radius: 80px;
+                    background-color: $background-grey;
+                }
+                .reviews__author-text {
+                    width: auto; height: 100px;
+                    margin-left: 2em;
+                    display: flex; flex-direction: column; justify-content: center;
+                    h4 {
+                        font-size: 24px;
+                        color: $color-bold-main
+                    }
+                    p {
+                        font-size: 16px;
+                        color: $color-light-main;
+                    }
+                }
+            }
+        }
+        .slick-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.25em;
+            cursor: pointer;
+            button {
+                font-size: 0;
+                width: 12px; height: 12px;
+                border-radius: 50%;
+                background-color: $color-light-main;
+                outline: none;
+                border: none; 
+            }
+            li {
+                list-style: none;
+                margin: 0em 1em;
+            }
+        }
+        .slick-arrow {
+            position: absolute;
+            z-index: 10;
+            top: 30%;
+            width: 50px; height: 50px;
+            background-image: url('../img/ui_arrow.svg');
+            background-repeat: no-repeat; background-position: center;
+            background-color: rgb(255, 255, 255, 00);
+            font-size: 0;
+            border: none;
+            cursor: pointer;
+        }
+        .slick-arrow.slick-prev {
+            left: 10%;
+            transform: rotate(180deg);
+        }
+        .slick-arrow.slick-next {
+           right: 10%; 
+        }
+        .slick-list {
+            overflow: hidden;
+        }
+        .slick-track {
+            display: flex;
+        }
+    }   
+}
+
+@media (max-width: 1500px) {
+    .reviews__wrapper {
+        .reviews__slider {
+            width: 100%;
+            .reviews__item {
+                .reviews__item-quote {
+                    width: 60% !important;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 1200px) {
+    .reviews__wrapper {
+        .reviews__slider {
+            .reviews__item {
+                .reviews__item-quote {
+                    width: 60% !important;
+                }
+                .reviews__item-author {
+                    width: 50% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .reviews__wrapper {
+        .reviews__slider {
+            .reviews__item {
+                .reviews__item-quote {
+                    width: 80% !important;
+                }
+                .reviews__item-author {
+                    width: 60% !important;
+                }
+            }
+            .slick-arrow {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .reviews__wrapper {
+        .reviews__slider {
+            .reviews__item {
+                .reviews__item-author {
+                    width: 80% !important;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 576px) {
+    .reviews__wrapper {
+        .reviews__slider {
+            .reviews__item {
+                height: 400px;
+                h1 {
+                    font-size: 82px !important;
+                }
+                .reviews__item-quote {
+                    width: 95% !important; height: 250px !important;
+                    font-size: 18px !important;
+                }
+                .reviews__item-author {
+                    width: 90% !important;
+                }
+            }
+        }
+    }
+}
+
