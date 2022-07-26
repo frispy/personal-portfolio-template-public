@@ -24,7 +24,7 @@
                 background: $color-bold-main;
                 width: 25%; height: 4px;
                 display: flex; align-self: flex-end; justify-content: flex-start;
-                transition: .6s ease-in-out;
+                transition: .3s ease-in-out;
             }
             .gallery__nav-item:hover {
                 a {
@@ -211,17 +211,25 @@
         display: flex; flex-direction: column; align-items: center;
         overflow: scroll; 
         .gallery__item-more-image {
-            width: 100%;
+            width: 100%; height: 450px;
             display: flex; justify-content: center; align-items: center;
             div {
                 width: 70%; height: 450px;
-                background-image: url(../img/placeholder-media.png);
                 background-position: center; background-repeat: no-repeat; background-size: cover;
+            }
+            .gallery__item-more-cat_media-image {
+                background-image: url(../img/placeholder-media.png);
+            }
+            .gallery__item-more-cat_frontend-image {
+                background-image: url(../img/placeholder-frontend.jpg);
+            }
+            .gallery__item-more-cat_design-image {
+                background-image: url(../img/placeholder-design.jpg);
             }
         }
         .gallery__item-more-desc {
             margin-top: 3em;
-            width: 80%;  
+            width: 80%;
             display: flex; flex-direction: row;
             justify-content: space-between;
             span {
@@ -230,7 +238,7 @@
                 color: $color-light-main;
             }
             .gallery__item-more-info {
-                width: 30%;
+                width: 30%; height: 550px;
                 display: flex; flex-direction: column;
                 div {
                     width: 100%;
@@ -255,7 +263,7 @@
                 }
             }
             .gallery__item-more-p {
-                width: 60%;
+                width: 60%; height: 550px;
                 p {
                     margin-top: 0.65em;
                     font-size: 32px;
@@ -418,7 +426,7 @@
                     }
                 }
                 .gallery__item-more-p {
-                    width: 100%;
+                    width: 100%; height: auto;
                     margin: 1.5em 0em 1.5em 0em;
                     p {
                         margin-top: 0.65em;

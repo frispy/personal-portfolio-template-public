@@ -8,9 +8,11 @@ headerBtn.onclick = function() {
     if (document.querySelector('.header__nav-mobile').classList.contains('h_m-close')) {
         document.querySelector('.header__nav-mobile').classList.add('h_m-open')
         document.querySelector('.header__nav-mobile').classList.remove('h_m-close')
+        document.querySelector('html').style.overflowY = 'hidden'
     } else {
         document.querySelector('.header__nav-mobile').classList.remove('h_m-open')
         document.querySelector('.header__nav-mobile').classList.add('h_m-close')
+        document.querySelector('html').style.overflowY = 'auto'
     }
 }
 
@@ -235,14 +237,17 @@ for (let i = 0; i < document.querySelectorAll('.gallery__item-more').length; i++
     document.getElementsByClassName('gallery__content-more-open')[i].onclick = function() {
         document.getElementsByClassName('gallery__item-more')[i].classList.add('gallery__item-more-display')
         document.getElementsByClassName('gallery__item-more')[i].classList.remove('gallery__item-more-hide')
+        document.querySelector('html').style.overflowY = 'hidden'
     }
     document.getElementsByClassName('gallery__content-item-span')[i].onclick = function() {
         document.getElementsByClassName('gallery__item-more')[i].classList.add('gallery__item-more-display')
         document.getElementsByClassName('gallery__item-more')[i].classList.remove('gallery__item-more-hide')
+        document.querySelector('html').style.overflowY = 'hidden'
     }
     document.getElementsByClassName('gallery__content-more-close')[i].onclick = function() {
         document.getElementsByClassName('gallery__item-more')[i].classList.remove('gallery__item-more-display')
         document.getElementsByClassName('gallery__item-more')[i].classList.add('gallery__item-more-hide')
+        document.querySelector('html').style.overflowY = 'auto'
     }
 }
 
@@ -275,6 +280,8 @@ document.querySelector('.hire__location-text').onclick = function() {
         document.querySelector('.hire__additional').classList.add('hire__additional-open')
         document.querySelector('.hire__additional').classList.remove('hire__additional-close')
         document.querySelector('.hire__item-arrow').style.transform = 'rotate(90deg)'
+        document.querySelector('.hire__additional').scrollIntoView({behavior: "smooth"})
+
     } else {
         document.querySelector('.hire__additional').classList.add('hire__additional-close')
         document.querySelector('.hire__additional').classList.remove('hire__additional-open')
