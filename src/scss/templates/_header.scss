@@ -1,5 +1,11 @@
 @import "abstracts/_variables.scss";
 
+// -------------------------
+// -------------------------
+// ----- NAVIGATION --------
+// -------------------------
+// -------------------------
+
 .header__nav {
     width: 100% !important; height: 80px;
     position: fixed;
@@ -57,6 +63,12 @@
     }
 }
 
+// -------------------------
+// -------------------------
+// -------- HEADER ---------
+// -------------------------
+// -------------------------
+
 header {
     width: 100%; height: 100vh;
     display: flex; align-items: center; flex-direction: column; justify-content: center;
@@ -68,7 +80,13 @@ header {
         width: 80%; height: 500px;
         display: flex; flex-direction: column; justify-content: center;
         .header__content-text {
-            width: 50%; height: 360px;
+            width: 60%; height: 360px;
+            h1 {
+                color: $color-regular-main;
+                span {
+                    color: $color-bold-main;
+                }
+            }
             h2 {
                 margin: 0.5em 0 1em 0;
                 font-weight: 400;
@@ -211,7 +229,7 @@ header {
             }
             div {
                 a {
-                    font-size: 26px;
+                    font-size: 24px;
                 }
             }
         }
@@ -309,12 +327,126 @@ header {
     }
 }
 
+// -------------------------
+// -------------------------
+// ----- Burger Menu -------
+// -------------------------
+// -------------------------
 
-
-// Burger Menu
 
 .header__nav-mobile {
     display: none;
+}
+
+.header__nav-mobile {
+    width: 100% !important;
+    display: none; flex-direction: column; 
+    transition: height .3s ease-in-out;
+    position: fixed;
+    z-index: 999999;
+    overflow: hidden;
+    .header__nav-mobile-title {
+        position: absolute;
+        width: 100px; height: 80px;
+        display: flex; justify-content: center; align-items: center;
+        h1 {
+            font-size: 36px;
+        }
+    }
+    .header__nav-mobile__button-wrapper {
+        width: 100%; height: 80px;
+        margin-top: 0.5em;
+        display: flex; justify-content: flex-end;
+        cursor: pointer;
+        .header__nav-mobile__button {
+            width: 60px; height: 60px;
+            margin-right: 1em;
+            display: flex; justify-content: center; align-items: center;
+            .header__btn-mobile-element {
+                width: 60px; height: 4px;
+                border-radius: 2px;
+                background: $color-bold-main;
+                background-blend-mode: difference;
+                transition: .2s ease-in-out;
+            }
+            .header__btn-mobile-element::before,
+            .header__btn-mobile-element::after {
+                width: 60px; height: 4px;
+                background: $color-bold-main;
+                border-radius: 2px;
+                content: '';
+                position: absolute;
+                transition: .3s ease-in-out;
+            }
+            .header__btn-mobile-element::before {
+                transform: translateY(20px);
+            }
+            .header__btn-mobile-element::after {
+                transform: translateY(-20px);
+            }
+        }
+    }
+    .header__nav-mobile-content {
+        width: 100%; height: 90%; 
+        flex-direction: column; justify-content: space-around; align-items: center;
+        a {
+            font-size: 42px;
+            font-weight: 500;
+            width: 100%; height: 100px;
+            display: flex; justify-content: center; align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+    }
+}
+.h_m-close {
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.500);
+    backdrop-filter: blur(2px);
+    .header__nav-mobile__button-wrapper {
+        .header__nav-mobile__button {
+            transform: rotate(0deg);
+        }
+    }
+    .header__nav-mobile-content {
+        display: none;
+    }
+}
+@keyframes hmOpen {
+    0% {
+        opacity: 0;
+    }
+    30% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.h_m-open {
+    height: 100%;
+    background-color: $color-white-main;
+    overflow-y: hidden;
+    .header__nav-mobile__button-wrapper {
+        display: flex; 
+        .header__nav-mobile__button {
+            .header__btn-mobile-element{
+                background: transparent;
+                box-shadow: none;
+            }
+            .header__btn-mobile-element::before {
+                transform: rotate(45deg);
+            }
+            .header__btn-mobile-element::after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .header__nav-mobile-content {
+        display: flex;
+        opacity: 1;
+        animation: hmOpen 0.6s ease-in-out;
+    }
 }
 
 @media (max-width: 745px) {
@@ -322,114 +454,16 @@ header {
         display: none;
     }
     .header__nav-mobile {
-        width: 100% !important;
-        display: flex; flex-direction: column; 
-        transition: height .3s ease-in-out;
-        position: fixed;
-        z-index: 999999;
-        overflow: hidden;
-        .header__nav-mobile-title {
-            position: absolute;
-            width: 100px; height: 80px;
-            display: flex; justify-content: center; align-items: center;
-            h1 {
-                font-size: 36px;
-            }
-        }
-        .header__nav-mobile__button-wrapper {
-            width: 100%; height: 80px;
-            margin-top: 0.5em;
-            display: flex; justify-content: flex-end;
-            cursor: pointer;
-            .header__nav-mobile__button {
-                width: 60px; height: 60px;
-                margin-right: 1em;
-                display: flex; justify-content: center; align-items: center;
-                .header__btn-mobile-element {
-                    width: 60px; height: 4px;
-                    border-radius: 2px;
-                    background: $color-bold-main;
-                    background-blend-mode: difference;
-                    transition: .2s ease-in-out;
-                }
-                .header__btn-mobile-element::before,
-                .header__btn-mobile-element::after {
-                    width: 60px; height: 4px;
-                    background: $color-bold-main;
-                    border-radius: 2px;
-                    content: '';
-                    position: absolute;
-                    transition: .3s ease-in-out;
-                }
-                .header__btn-mobile-element::before {
-                    transform: translateY(20px);
-                }
-                .header__btn-mobile-element::after {
-                    transform: translateY(-20px);
-                }
-            }
-        }
-        .header__nav-mobile-content {
-            width: 100%; height: 90%; 
-            flex-direction: column; justify-content: space-around; align-items: center;
-            a {
-                font-size: 42px;
-                font-weight: 500;
-                width: 100%; height: 100px;
-                display: flex; justify-content: center; align-items: center;
-                position: relative;
-                cursor: pointer;
-            }
-        }
+        display: flex;
     }
-    .h_m-close {
-        height: 80px;
-        background-color: rgba(255, 255, 255, 0.500);
-        backdrop-filter: blur(2px);
-        .header__nav-mobile__button-wrapper {
-            .header__nav-mobile__button {
-                transform: rotate(0deg);
-            }
-        }
-        .header__nav-mobile-content {
-            display: none;
-        }
+}
+
+@media (max-height: 500px) {
+    .header__nav {
+        display: none;
     }
-    @keyframes hmOpen {
-        0% {
-            opacity: 0;
-        }
-        30% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    .h_m-open {
-        height: 100%;
-        background-color: $color-white-main;
-        overflow-y: hidden;
-        .header__nav-mobile__button-wrapper {
-            display: flex; 
-            .header__nav-mobile__button {
-                .header__btn-mobile-element{
-                    background: transparent;
-                    box-shadow: none;
-                }
-                .header__btn-mobile-element::before {
-                    transform: rotate(45deg);
-                }
-                .header__btn-mobile-element::after {
-                    transform: rotate(-45deg);
-                }
-            }
-        }
-        .header__nav-mobile-content {
-            display: flex;
-            opacity: 1;
-            animation: hmOpen 0.6s ease-in-out;
-        }
+    .header__nav-mobile {
+        display: flex;
     }
 }
 
