@@ -17,11 +17,14 @@
     .header__nav-content {
         width: 80%; height: auto;
         display: flex; flex-direction: row; justify-content: space-between;
+        user-select: none;
         h1 {
             font-size: 36px;
             user-select: none;
             cursor: pointer;
+            transition: .3s ease-in-out;
         }
+        h1:hover {color: $color-regular-main;}
         div {
             width: 85%; height: auto;
             display: flex; justify-content: space-between; align-items: center;

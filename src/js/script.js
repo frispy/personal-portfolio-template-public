@@ -17,15 +17,16 @@ headerBtn.onclick = function() {
 }
 
 document.querySelectorAll('.header__nav-link').forEach(item => {
-    item.addEventListener('click', event => {
-        headerBtn.click()
-    })
+        item.addEventListener('click', event => {
+            if (window.matchMedia("(max-width: 745px)").matches) {
+                headerBtn.click()
+            }
+        })
 })
 
 // -----------------------
 // ---- HEADER SCRIPT ----
 // -----------------------
-
 
 let headerDesktop = document.querySelector('.header__nav')
 
@@ -57,7 +58,6 @@ window.onscroll = function() {
 setTimeout(() => {
     document.querySelector('.header__scrolldown').classList.add('header__scrolldown-display')
     document.querySelector('.header__scrolldown').classList.remove('header__scrolldown-hide')
-    console.log('2sec')
 }, 8000) 
 
 // -----------------------------------
@@ -251,9 +251,6 @@ for (let i = 0; i < document.querySelectorAll('.gallery__item-more').length; i++
     }
 }
 
-
-console.log(document.querySelectorAll('.gallery__content-item').length)
-
 // -------------------
 // ---- SERVICE ------
 // -------------------
@@ -288,7 +285,6 @@ document.querySelector('.hire__location-text').onclick = function() {
         document.querySelector('.hire__item-arrow').style.transform = 'rotate(0deg)'
 
     }
-    console.log(1)
 }
 
 // Google Map
